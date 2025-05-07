@@ -59,7 +59,6 @@ The script will initialize the model, load the data, and start the training proc
 
 ### Training Parameters
 
-- **Total iterations**: 2,200  
 - **Random seeds**:  
   - NumPy: `1234`  
   - TensorFlow: `42`  
