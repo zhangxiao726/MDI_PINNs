@@ -74,8 +74,8 @@ The sampling strategy for various domains and regions is summarized below. For f
 
 | Parameter | Value | Spatial Domain | Sampling Method     |
 |----------|-------|----------------|----------------------|
-| N0       | 400   | x ∈ [0, 0.11]  | Random selection     |
-|          | 400   | x ∈ [-0.11, 0] | Random selection     |
+| N0+       | 400   | x ∈ [0, 0.11]  | Random selection     |
+| N0-        | 400   | x ∈ [-0.11, 0] | Random selection     |
 | N_b      | 2,000 | t ∈ [0, 800]   | Random selection     |
 | N_f_1    | 4,500 | Full domain    | Latin Hypercube      |
 | N_f_2    | 4,600 | Central region | Latin Hypercube      |
