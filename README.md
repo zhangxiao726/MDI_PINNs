@@ -66,35 +66,24 @@ The script will initialize the model, load the data, and start the training proc
   - `'maxiter'`: 7000  
   - `'maxfun'`: 20000  
   - `'maxcor'`: 70  
-  - `'maxls'`: 70  
+  - `'maxls'`: 70
 
 ### Data Sampling Strategy
 
-The sampling strategy for various domains and regions is summarized below. For full implementation details, see the file: [main.py](https://github.com/zhangxiao726/MDI_PINNs/blob/main/main.py).
+The sampling strategy is summarized below. For full implementation details, see the file: [main.py](https://github.com/zhangxiao726/MDI_PINNs/blob/main/main.py).
 
-| Parameter | Value | Spatial Domain | Sampling Method     |
-|----------|-------|----------------|----------------------|
-| N0+       | 400   | x ∈ [0, 0.11]  | Random selection     |
-| N0-        | 400   | x ∈ [-0.11, 0] | Random selection     |
-| N_b      | 2,000 | t ∈ [0, 800]   | Random selection     |
-| N_f_1    | 4,500 | Full domain    | Latin Hypercube      |
-| N_f_2    | 4,600 | Central region | Latin Hypercube      |
+| Parameter| Value| Sampling Method     |
+|----------|-----------|------------------|
+| N0+      | 400  | Random selection     |
+| N0-      | 400  | Random selection     |
+| N_b      | 2,000   |Random selection     |
+| N_f_1    | 4,500  | Latin Hypercube      |
+| N_f_2    | 4,600 |Latin Hypercube      |
 
 > **Note**:  
 > - `N0`: Number of initial condition points.  
 > - `N_b`: Number of boundary condition points.  
 > - `N_f_1`, `N_f_2`: Collocation points used to enforce PDE residuals over different spatial subdomains.
-
-### Domain Configuration
-
-The computational domain is divided into distinct regions to facilitate multitask learning and dynamic interconnection between subproblems.
-
-| Region        | Spatial Range       | Temporal Range     |
-|---------------|---------------------|--------------------|
-| u-space       | [0.0, 0.11]         | [0.0, 800.0]       |
-| v-space       | [-0.11, 0.0]        | [0.0, 800.0]       |
-| u-central     | [0.0, 0.05]         | [0.0, 800.0]       |
-| v-central     | [-0.05, 0.0]        | [0.0, 800.0]       |
 
 
 **Example usage:**
